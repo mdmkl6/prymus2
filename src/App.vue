@@ -1,23 +1,29 @@
 <template>
   <div>  
-    Firstname:<input type="text" v-model="Firstname"></br>
-    Lastname:<input type="text" v-model="Lastname"></br>
-    <button @click="addNew()">Add new</button>
-    <ul v-if="list.length>0">
-      <li v-for="el in list">{{el}}</li>
-    </ul>
+    <div>
+      <h3>New participant</h3>
+      <new-participant-form @added="addNewParticipant($event)"></new-participant-form>
+    </div>
+    <div> 
+      <participants-list :list="participants"></participants-list>
+    </div>
   </div>
 </template>
  
 <script>
-    export default {
-        data() {
-            return {list: []}
-        },
-        methods: {
-            addNew(){
-              this.list.push(this.Firstname+" "+this.Lastname);
-            }
-        }
-    };
+  import ParticipantsList from "./ParticipantsList.vue";
+  import NewParticipantForm from "./NewParticipantForm.vue";
+  export default {
+    components: {ParticipantsList,NewParticipantForm},
+    data() 
+    {
+      return {participants: []}
+    },
+      methods: 
+    {
+      addNewParticipant(participant) {
+        this.participants.push(addNewParticipant.Firstname+" "+addNewParticipant.Lastname);
+      }
+    }
+  };
 </script>
