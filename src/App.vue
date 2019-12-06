@@ -1,11 +1,11 @@
 <template>
   <div>
 
-    <div> 
+    <div class = "part"> 
       <participants-list :list="participants"></participants-list>
     </div>
 
-    <div>
+    <div class = "npart">
       <h3>New participant</h3>
       <new-participant-form @added="addNewParticipant($event)"></new-participant-form>
     </div>
@@ -30,3 +30,15 @@
     }
   };
 </script>
+
+<style>
+
+.part{
+  float: left;
+}
+.npart{
+  float: right;
+  margin-right: 1000px;
+}
+
+</style>

@@ -4,7 +4,7 @@
         <h1>Participants list</h1>
       <ul v-if="list.length>0">
         <li v-for="(el,key) in list">{{el}}
-        <button @click="remove(list,el,key)">remove</button>
+        <button type="button" class="btn btn-danger" @click="remove(list,el,key)">remove</button>
         </li>
       </ul>
     </ol>

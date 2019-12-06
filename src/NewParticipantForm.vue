@@ -1,9 +1,11 @@
 <template>
   <div>
     <form @submit.prevent="">
-        Firstname:<input type="text" v-model="Firstname"></br>
-        Lastname:<input type="text" v-model="Lastname"></br>
-        <button @click="add()">Add new participant</button>
+      <div class="form-group">
+        Firstname:<input class="form-control" type="text" v-model="Firstname"></br>
+        Lastname:<input class="form-control" type="text" v-model="Lastname"></br>
+        <button type="submit" class="btn btn-primary" @click="add()">Add new participant</button>
+      </div>
     </form>
   </div>
 </template>
