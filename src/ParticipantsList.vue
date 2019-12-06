@@ -3,7 +3,9 @@
     <ol>
         <h1>Participants list</h1>
       <ul v-if="list.length>0">
-        <li v-for="el in list">{{el}}</li>
+        <li v-for="(el,key) in list">{{el}}
+        <button @click="remove(list,el,key)">remove</button>
+        </li>
       </ul>
     </ol>
   </div>
@@ -11,6 +13,12 @@
 
 <script>
   export default {
-    props: ['list']
-  };
+    props: ['list'],
+    methods: {
+      remove(list,el,key) {
+        console.log(key);
+        list.splice(key,1);
+      }
+    } 
+  };   
 </script>

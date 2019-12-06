@@ -1,12 +1,15 @@
 <template>
-  <div>  
+  <div>
+
+    <div> 
+      <participants-list :list="participants"></participants-list>
+    </div>
+
     <div>
       <h3>New participant</h3>
       <new-participant-form @added="addNewParticipant($event)"></new-participant-form>
     </div>
-    <div> 
-      <participants-list :list="participants"></participants-list>
-    </div>
+
   </div>
 </template>
  
@@ -21,8 +24,8 @@
     },
       methods: 
     {
-      addNewParticipant(participant) {
-        this.participants.push(addNewParticipant.Firstname+" "+addNewParticipant.Lastname);
+      addNewParticipant(newParticipant) {
+        this.participants.push(newParticipant);
       }
     }
   };

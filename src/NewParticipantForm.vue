@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="add()">
+    <form @submit.prevent="">
         Firstname:<input type="text" v-model="Firstname"></br>
         Lastname:<input type="text" v-model="Lastname"></br>
         <button @click="add()">Add new participant</button>
@@ -18,9 +18,8 @@
     },
     methods: {
       add() {
+        this.newParticipant = this.Firstname +' '+this.Lastname;
         this.$emit('added', this.newParticipant);
-        this.newParticipant.Firstname;
-        this.newParticipant.Lastname;
       }
     }
   };
